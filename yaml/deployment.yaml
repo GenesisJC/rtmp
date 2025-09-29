@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: esw-rtmp
-          image: rizkilab/rtmp-tiangolo:1.1
+          image: rizkilab/rtmo-tiangolo:0.1
           imagePullPolicy: Always
           ports:
             - name: rtmp-port
