@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: esw-rtmp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      pod: esw-rtmp
+  template:
+    metadata:
+      labels:
+        pod: esw-rtmp
+    spec:
+      containers:
+        - name: esw-rtmp
+          image: rizkilab/rtmp-tiangolo:1.1
+          imagePullPolicy: Always
+          ports:
+            - name: rtmp-port
+              containerPort: 1935
+            - name: http-port
+              containerPort: 8080
